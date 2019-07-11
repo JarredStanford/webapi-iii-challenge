@@ -99,7 +99,6 @@ router.put('/:id', validateUserId, async (req, res) => {
 
 async function validateUserId(req, res, next) {
     try {
-        console.log(await Users.getById(req.params.id))
         const user = await Users.getById(req.params.id)
         if (user.id == req.params.id) {
             req.user = user.id
